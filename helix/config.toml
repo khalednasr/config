@@ -1,8 +1,7 @@
-theme = "autumn_night"
+theme = "gruvbox_custom"
 
 [editor]
 line-number = "relative"
-mouse = false
 
 [editor.cursor-shape]
 insert = "bar"
@@ -11,4 +10,3 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
-
