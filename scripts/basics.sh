@@ -19,3 +19,5 @@ sudo snap install yazi --classic --edge
 
 # python
 sudo apt install python3-venv python3-pip python3-pyqt5 python3-numpy python3-scipy python3-matplotlib
+sudo apt install pipx
+pipx ensurepath

@@ -49,3 +49,6 @@ function auto_activate_venv --on-variable PWD --description "Auto activate/deact
         source "./.venv/bin/activate.fish" &>/dev/null
     end
 end
+
+# Created by `pipx` on 2025-03-09 19:01:19
+set PATH $PATH /home/nasrk/.local/bin
