@@ -8,8 +8,14 @@ git config --global init.defaultBranch main
 git config --global user.name "Khaled Nasr"
 git config --global user.email k.nasr92@gmail.com
 
+# build stuff
+sudo apt install build-essential cmake
+
 # snap packages
 sudo apt install snapd
-sudo snap install helix --classic
-sudo snap install zellij --classic
-sudo snap install yazi --classic
+sudo snap install helix --classic --edge
+sudo snap install zellij --classic --edge
+sudo snap install yazi --classic --edge
+
+# python
+sudo apt install python3-venv python3-pip python3-pyqt5 python3-numpy python3-scipy python3-matplotlib

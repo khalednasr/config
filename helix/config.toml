@@ -14,4 +14,9 @@ select = "underline"
 hidden = false
 
 [keys.normal]
-C-e = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/yazi-picker.sh open"
+C-e = ":sh zellij run -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- bash ~/.config/helix/yazi-picker.sh open"
+
+[keys.normal."space"]
+x = ":buffer-close"
+e = "no_op"
+E = "no_op"
