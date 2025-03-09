@@ -2,6 +2,8 @@ theme = "gruvbox_custom"
 
 [editor]
 line-number = "relative"
+shell = ["fish", "-c"]
+bufferline = "always"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -12,4 +14,4 @@ select = "underline"
 hidden = false
 
 [keys.normal]
-C-y = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/yazi-picker.sh open"
+C-e = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/yazi-picker.sh open"
