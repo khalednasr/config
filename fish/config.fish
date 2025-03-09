@@ -1,10 +1,6 @@
-if status is-interactive
-    set -g fish_greeting
-end
-
 function venv --description "Create and activate a new virtual environment"
     echo "Creating virtual environment in "(pwd)"/.venv"
-    python3 -m venv .venv --upgrade-deps
+    python3 -m venv .venv --upgrade-deps --system-site-packages
     source .venv/bin/activate.fish
 
     # Append .venv to the Git exclude file, but only if it's not
@@ -19,7 +15,7 @@ function venv --description "Create and activate a new virtual environment"
     end
 end
 
-function auto_activate_venv --on-variable PWD --description "Auto activate/deactivate virtualenv when I change directories"
+function __auto_activate_venv
     # Get the top-level directory of the current Git repo (if any)
     set REPO_ROOT (git rev-parse --show-toplevel 2>/dev/null)
 
@@ -50,5 +46,13 @@ function auto_activate_venv --on-variable PWD --description "Auto activate/deact
     end
 end
 
-# Created by `pipx` on 2025-03-09 19:01:19
-set PATH $PATH /home/nasrk/.local/bin
+function __auto_activate_venv_event --on-variable PWD --description "Auto activate/deactivate virtualenv when I change directories"
+    __auto_activate_venv
+end
+
+if status is-interactive
+    set -g fish_greeting
+    __auto_activate_venv
+end
+
+fish_add_path ~/.local/bin # for pipx
