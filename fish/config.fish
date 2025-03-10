@@ -56,3 +56,6 @@ if status is-interactive
 end
 
 fish_add_path ~/.local/bin # for pipx
+fish_add_path ~/xilinx/Vivado/2024.2/bin
+fish_add_path ~/xilinx/Vitis/2024.2/bin
+fish_add_path ~/xilinx/Vitis_HLS/2024.2/bin
