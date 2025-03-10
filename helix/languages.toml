@@ -1,3 +1,6 @@
 [language-server.pylsp.config.pylsp]
 plugins.ruff.enabled = true
 plugins.black.enabled = true
+
+[language-server.svlangserver.config.systemverilog]
+includeIndexing = ["*.{v,vh,sv,svh}", "**/*.{v,vh,sv,svh}"]
