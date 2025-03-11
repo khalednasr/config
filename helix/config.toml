@@ -30,3 +30,5 @@ C-e = ":sh zellij run -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- bash ~
 x = ":buffer-close"
 e = "no_op"
 E = "no_op"
+o = "add_newline_below"
+O = "add_newline_above"
