@@ -5,3 +5,4 @@ autostart/
 menus/
 gnuplot/
 wslu/
+*.bak*
