@@ -1,3 +1,4 @@
+fish/fish_variables
 gh/
 matplotlib/
 dconf/
@@ -6,3 +7,14 @@ menus/
 gnuplot/
 wslu/
 *.bak*
+chromium/
+kanshi/
+libfm/
+lxterminal/
+pcmanfm/
+pulse/
+user-dirs.dirs
+user-dirs.locale
+wf-panel-pi.ini
+xarchiver/
+xsettingsd/

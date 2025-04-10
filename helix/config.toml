@@ -4,6 +4,7 @@ theme = "gruvbox_custom"
 line-number = "relative"
 shell = ["fish", "-c"]
 bufferline = "always"
+true-color = true
 
 [editor.cursor-shape]
 insert = "bar"

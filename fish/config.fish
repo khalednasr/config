@@ -51,10 +51,14 @@ function __auto_activate_venv_event --on-variable PWD --description "Auto activa
 end
 
 if status is-interactive
+    fish_config theme choose Lava
+    fish_config prompt choose arrow
     set -g fish_greeting
     __auto_activate_venv
 end
 
+set -Ux EDITOR helix
+set -Ux PIP_REQUIRE_VIRTUALENV true
 fish_add_path ~/.local/bin # for pipx
 fish_add_path ~/xilinx/Vivado/2024.2/bin
 fish_add_path ~/xilinx/Vitis/2024.2/bin
