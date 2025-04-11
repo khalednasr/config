@@ -1,5 +1,7 @@
 #!/usr/bin/env fish
 
+set KERNEL kernel_2712
+
 sudo make -j6 modules_install
 
 sudo cp /boot/firmware/$KERNEL.img /boot/firmware/$KERNEL-backup.img
