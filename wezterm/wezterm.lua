@@ -4,10 +4,10 @@ local wezterm = require "wezterm"
 config = wezterm.config_builder()
 
 -- Environment config
--- config.default_prog = {'wsl.exe', '--shell-type', 'login', '--cd', '~', 'fish'}
--- local wsl_domains = wezterm.default_wsl_domains()
-
-config.default_domain = 'WSL:Ubuntu'
+local wsl_domains = wezterm.default_wsl_domains()
+if next(wsl_domains) ~= nil then
+    config.default_domain = wsl_domains[1].name
+end
 
 config.color_scheme = "GruvboxDarkHard"
 config.font = wezterm.font '0xProto Nerd Font'
