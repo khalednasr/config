@@ -50,6 +50,14 @@ function __auto_activate_venv_event --on-variable PWD --description "Auto activa
     __auto_activate_venv
 end
 
+function osc7_promp --on-event fish_prompt
+    if grep -q Microsoft /proc/version
+        printf "\033]7;file://%s\033\\" (wslpath -w "$PWD")
+    else
+        printf "\033]7;file://%s\033\\" (pwd)
+    end
+end
+
 if status is-interactive
     fish_config theme choose Lava
     fish_config prompt choose arrow

@@ -1,28 +1,125 @@
 -- Pull in the wezterm API
-local wezterm = require 'wezterm'
+local wezterm = require "wezterm"
 
--- This will hold the configuration.
-local config = wezterm.config_builder()
+config = wezterm.config_builder()
 
--- This is where you actually apply your config choices
+-- Environment config
+-- config.default_prog = {'wsl.exe', '--shell-type', 'login', '--cd', '~', 'fish'}
+-- local wsl_domains = wezterm.default_wsl_domains()
 
--- For example, changing the color scheme:
--- config.color_scheme = 'kanagawabones'
+config.default_domain = 'WSL:Ubuntu'
 
+config.color_scheme = "GruvboxDarkHard"
 config.font = wezterm.font '0xProto Nerd Font'
 
-config.default_prog = {'wsl.exe', '--shell-type', 'login', '--cd', '~', 'zellij'}
+config.window_decorations = "RESIZE"
+config.window_close_confirmation = 'NeverPrompt'
 
-config.colors = {
-	background = '#16161d',
-	cursor_bg = 'grey',
+-- tmux
+config.keys = {
+    {
+        mods = "ALT",
+        key = "c",
+        action = wezterm.action.SpawnTab "CurrentPaneDomain",
+    },
+    {
+        mods = "ALT",
+        key = "x",
+        action = wezterm.action.CloseCurrentPane { confirm = false }
+    },
+    {
+        mods = "ALT",
+        key = "p",
+        action = wezterm.action.ActivateTabRelative(-1)
+    },
+    {
+        mods = "ALT",
+        key = "n",
+        action = wezterm.action.ActivateTabRelative(1)
+    },
+    {
+        mods = "ALT",
+        key = "<",
+        action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain" }
+    },
+    {
+        mods = "ALT",
+        key = "-",
+        action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" }
+    },
+    {
+        mods = "ALT",
+        key = "h",
+        action = wezterm.action.ActivatePaneDirection "Left"
+    },
+    {
+        mods = "ALT",
+        key = "j",
+        action = wezterm.action.ActivatePaneDirection "Down"
+    },
+    {
+        mods = "ALT",
+        key = "k",
+        action = wezterm.action.ActivatePaneDirection "Up"
+    },
+    {
+        mods = "ALT",
+        key = "l",
+        action = wezterm.action.ActivatePaneDirection "Right"
+    },
+    {
+        mods = "ALT",
+        key = "LeftArrow",
+        action = wezterm.action.AdjustPaneSize { "Left", 5 }
+    },
+    {
+        mods = "ALT",
+        key = "RightArrow",
+        action = wezterm.action.AdjustPaneSize { "Right", 5 }
+    },
+    {
+        mods = "ALT",
+        key = "DownArrow",
+        action = wezterm.action.AdjustPaneSize { "Down", 5 }
+    },
+    {
+        mods = "ALT",
+        key = "UpArrow",
+        action = wezterm.action.AdjustPaneSize { "Up", 5 }
+    },
 }
 
-config.enable_tab_bar = false
-config.window_decorations = "RESIZE|TITLE"
+for i = 1, 9 do
+    -- ALT + number to activate that tab
+    table.insert(config.keys, {
+        key = tostring(i),
+        mods = "ALT",
+        action = wezterm.action.ActivateTab(i-1),
+    })
+end
 
-config.max_fps = 120
-config.prefer_egl = true
-config.window_close_confirmation = 'NeverPrompt'
+-- tab bar
+config.hide_tab_bar_if_only_one_tab = false
+-- config.tab_bar_at_bottom = true
+config.tab_max_width = 48
+config.use_fancy_tab_bar = false
+config.tab_and_split_indices_are_zero_based = false
+local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
+bar.apply_to_config(
+    config,
+    {
+         position = "top",
+         modules = {
+             workspace = { enabled = false },
+             leader = { enabled = false },
+             pane = { enabled = false },
+             username = { enabled = false },
+             hostname = { enabled = false },
+             cwd = { enabled = false },
+             
+         }
+    }
+)
+
 -- and finally, return the configuration to wezterm
 return config
