@@ -25,7 +25,8 @@ character = "▏" # Some characters that work well: "▏", "┆", "┊", "⸽"
 skip-levels = 1
 
 [keys.normal]
-C-e = ":sh wezterm cli split-pane --left --percent 30 -- ~/.config/helix/wezilix.sh $WEZTERM_PANE open zoom > /dev/null"
+# C-e = ":sh wezterm.exe cli split-pane --left --percent 30 -- ~/.config/helix/wezilix.sh %sh{cmd.exe /c echo %%WEZTERM_PANE%%} open zoom > /dev/null"
+C-e = ":sh ~/.config/helix/filepicker.fish"
 
 [keys.normal."space"]
 x = ":buffer-close"
