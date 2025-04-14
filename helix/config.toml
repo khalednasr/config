@@ -25,15 +25,7 @@ character = "▏" # Some characters that work well: "▏", "┆", "┊", "⸽"
 skip-levels = 1
 
 [keys.normal]
-C-e = [
-  ':sh rm -f /tmp/unique-file',
-  ':insert-output yazi %{buffer_name} --chooser-file=/tmp/unique-file',
-  ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
-  ':open %sh{cat /tmp/unique-file}',
-  ':redraw',
-  ':set mouse false',
-  ':set mouse true',
-]
+C-e = ":sh wezterm cli split-pane --left --percent 30 -- ~/.config/helix/wezilix.sh $WEZTERM_PANE open zoom > /dev/null"
 
 [keys.normal."space"]
 x = ":buffer-close"
