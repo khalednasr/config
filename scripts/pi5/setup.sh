@@ -9,3 +9,4 @@ sudo apt remove xsel xclip
 sudo apt install wl-clipboard
 
 set -Ux DISPLAY :0
+xhost +si:localuser:root
