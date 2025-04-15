@@ -21,6 +21,7 @@ sudo snap install zellij --classic --edge
 sudo snap install yazi --classic --edge
 
 # python
+fish_add_path ~/.local/bin # for pipx
 sudo apt install python3-venv python3-pip python3-pyqt5 python3-numpy python3-scipy python3-matplotlib pipx
 pipx install python-lsp-server
 pipx inject python-lsp-server python-lsp-ruff python-lsp-black
