@@ -5,8 +5,8 @@ echo 'deb [signed-by=/etc/apt/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez
 sudo apt update
 sudo apt install wezterm
 
-sudo apt remove xsel xclip
-sudo apt install wl-clipboard
+# sudo apt remove xsel xclip
+# sudo apt install wl-clipboard
 
 set -Ux DISPLAY :0
 xhost +si:localuser:root

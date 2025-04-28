@@ -2,9 +2,6 @@
 
 sudo apt update
 
-# wsl utils
-sudo apt install wslu
-
 # git
 sudo apt install git gh
 git config --global init.defaultBranch main
