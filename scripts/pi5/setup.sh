@@ -9,4 +9,4 @@ sudo apt install wezterm
 # sudo apt install wl-clipboard
 
 set -Ux DISPLAY :0
-xhost +si:localuser:root
+# xhost +si:localuser:root
