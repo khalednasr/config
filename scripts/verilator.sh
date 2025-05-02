@@ -10,7 +10,7 @@ sudo apt-get install zlibc zlib1g zlib1g-dev  # Ubuntu only (ignore if gives err
 git clone https://github.com/verilator/verilator ~/verilator   # Only first time
 
 cd ~/verilator
-git checkout master      # Use development branch (e.g. recent bug fixes)
+git checkout stable
 
 autoconf         # Create ./configure script
 ./configure      # Configure and create Makefile
