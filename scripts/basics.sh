@@ -11,8 +11,12 @@ git config --global user.email k.nasr92@gmail.com
 # build stuff
 sudo apt install build-essential cmake
 
+# neovim dependencies
+sudo apt install fzf ripgrep fd-find
+
 # snap packages
 sudo apt install snapd
+sudo snap install nvim --classic --edge
 sudo snap install helix --classic --edge
 sudo snap install zellij --classic --edge
 sudo snap install yazi --classic --edge
