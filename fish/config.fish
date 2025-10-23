@@ -57,5 +57,5 @@ if status is-interactive
     __auto_activate_venv
 end
 
-set -Ux EDITOR helix
+set -Ux EDITOR nvim
 set -Ux PIP_REQUIRE_VIRTUALENV true
