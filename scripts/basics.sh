@@ -27,9 +27,11 @@ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 source "$HOME/.cargo/env.fish"
 rustup component add rust-analyzer
 
-# egui
+# gui stuff
 sudo apt-get install libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev libxkbcommon-dev libssl-dev -y
+sudo apt install libxcb-cursor0 qt6-wayland -y
 
 # environment variables
 set -Ux DISPLAY :0
 set -Ux XDG_CONFIG_HOME $HOME/.config
+set -Ux QT_QPA_PLATFORM xcb
