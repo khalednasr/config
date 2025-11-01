@@ -35,3 +35,7 @@ sudo apt install libxcb-cursor0 qt6-wayland -y
 set -Ux DISPLAY :0
 set -Ux XDG_CONFIG_HOME $HOME/.config
 set -Ux QT_QPA_PLATFORM xcb
+
+# ipython autoreload
+mkdir -p .ipython/profile_default/startup
+echo -e "%load_ext autoreload\n%autoreload 2" > .ipython/profile_default/startup/001.ipy

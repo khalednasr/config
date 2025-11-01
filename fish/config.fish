@@ -59,3 +59,5 @@ end
 
 set -Ux EDITOR nvim
 set -Ux PIP_REQUIRE_VIRTUALENV true
+
+alias wezterm="wezterm.exe"
