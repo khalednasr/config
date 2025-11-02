@@ -59,5 +59,9 @@ end
 
 set -Ux EDITOR nvim
 set -Ux PIP_REQUIRE_VIRTUALENV true
+set -Ux GALLIUM_DRIVER d3d12
 
-alias wezterm="wezterm.exe"
+if type -q wslinfo
+    alias wezterm="wezterm.exe"
+    alias chrome="/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe"
+end

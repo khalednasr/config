@@ -39,3 +39,9 @@ set -Ux QT_QPA_PLATFORM xcb
 # ipython autoreload
 mkdir -p .ipython/profile_default/startup
 echo -e "%load_ext autoreload\n%autoreload 2" > .ipython/profile_default/startup/001.ipy
+
+# wsl utils
+if type -q wslinfo
+    sudo apt install wslu -y
+end
+
