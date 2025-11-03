@@ -32,7 +32,7 @@ sudo apt-get install libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev lib
 sudo apt install libxcb-cursor0 qt6-wayland -y
 
 # audio
-sudo apt-get install libasound-dev -y
+sudo apt-get install libasound-dev libasound2-plugins libportaudio2 -y
 
 # environment variables
 set -Ux DISPLAY :0
