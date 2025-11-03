@@ -31,6 +31,9 @@ rustup component add rust-analyzer
 sudo apt-get install libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev libxkbcommon-dev libssl-dev -y
 sudo apt install libxcb-cursor0 qt6-wayland -y
 
+# audio
+sudo apt-get install libasound-dev -y
+
 # environment variables
 set -Ux DISPLAY :0
 set -Ux XDG_CONFIG_HOME $HOME/.config
