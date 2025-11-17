@@ -65,3 +65,4 @@ if type -q wslinfo
     alias wezterm="wezterm.exe"
     alias chrome="/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe"
 end
+direnv hook fish | source

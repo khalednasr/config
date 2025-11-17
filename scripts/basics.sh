@@ -19,8 +19,12 @@ sudo apt install snapd
 sudo snap install nvim --classic --edge
 
 # python and uv
-sudo apt install python3-venv -y
-curl -LsSf https://astral.sh/uv/install.sh | sh
+# sudo apt install python3-venv -y
+# curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# pixi
+curl -fsSL https://pixi.sh/install.sh | sh
+pixi global install direnv
 
 # rust
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
