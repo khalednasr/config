@@ -50,6 +50,11 @@ function __auto_activate_venv_event --on-variable PWD --description "Auto activa
     __auto_activate_venv
 end
 
+function direnv_init_pixi
+    echo -e 'watch_file pixi.lock\neval "$(pixi shell-hook)"' > .envrc
+    direnv allow
+end
+
 if status is-interactive
     fish_config theme choose Lava
     fish_config prompt choose arrow
@@ -66,3 +71,4 @@ if type -q wslinfo
     alias chrome="/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe"
 end
 direnv hook fish | source
+pixi completion --shell fish | source
